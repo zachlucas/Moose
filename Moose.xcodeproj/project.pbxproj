@@ -14,7 +14,7 @@
 		38E68C0319F72FDC00180BDF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E68C0219F72FDC00180BDF /* Images.xcassets */; };
 		38E68C0619F72FDC00180BDF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38E68C0419F72FDC00180BDF /* LaunchScreen.xib */; };
 		38E68C1219F72FDC00180BDF /* MooseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E68C1119F72FDC00180BDF /* MooseTests.m */; };
-		38E68C1C19F754C000180BDF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E68C1B19F754C000180BDF /* FacebookSDK.framework */; };
+		981930F71A43DC550039F583 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E68C1B19F754C000180BDF /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38E68C1C19F754C000180BDF /* FacebookSDK.framework in Frameworks */,
+				981930F71A43DC550039F583 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +350,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/gohome190/Documents/FacebookSDK,
+					/Users/zachlucas/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = Moose/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -364,6 +365,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/gohome190/Documents/FacebookSDK,
+					/Users/zachlucas/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = Moose/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
