@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <Twitter/Twitter.h>
 
 @interface ViewController ()
 
@@ -22,6 +23,18 @@
     FBLoginView *loginView = [[FBLoginView alloc] init];
     //loginView.center = self.view.center;
     //[self.view addSubview:loginView];
+    /*
+    TWTRLogInButton* logInButton =  [TWTRLogInButton
+                                     buttonWithLogInCompletion:
+                                     ^(TWTRSession* session, NSError* error) {
+                                         if (session) {
+                                             NSLog(@"signed in as %@", [session userName]);
+                                         } else {
+                                             NSLog(@"error: %@", [error localizedDescription]);
+                                         }
+                                     }];
+    logInButton.center = self.view.center;*/
+    //[self.view addSubview:logInButton];
 }
 
 - (void)didReceiveMemoryWarning {

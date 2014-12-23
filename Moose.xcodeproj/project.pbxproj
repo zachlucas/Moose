@@ -15,6 +15,8 @@
 		38E68C0619F72FDC00180BDF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38E68C0419F72FDC00180BDF /* LaunchScreen.xib */; };
 		38E68C1219F72FDC00180BDF /* MooseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E68C1119F72FDC00180BDF /* MooseTests.m */; };
 		981930F71A43DC550039F583 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E68C1B19F754C000180BDF /* FacebookSDK.framework */; };
+		98E463D01A48C4C800BEBDF7 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E463CF1A48C4C800BEBDF7 /* Twitter.framework */; };
+		98E463D31A48CBAC00BEBDF7 /* UICardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E463D21A48CBAC00BEBDF7 /* UICardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		38E68C1019F72FDC00180BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38E68C1119F72FDC00180BDF /* MooseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MooseTests.m; sourceTree = "<group>"; };
 		38E68C1B19F754C000180BDF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		98E463CF1A48C4C800BEBDF7 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		98E463D11A48CBAC00BEBDF7 /* UICardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICardView.h; sourceTree = "<group>"; };
+		98E463D21A48CBAC00BEBDF7 /* UICardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICardView.m; sourceTree = "<group>"; };
+		98E463D41A48D17A00BEBDF7 /* Fabric.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Fabric.app; path = ../../../Downloads/Fabric.app; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98E463D01A48C4C800BEBDF7 /* Twitter.framework in Frameworks */,
 				981930F71A43DC550039F583 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +73,8 @@
 		38E68BE919F72FDC00180BDF = {
 			isa = PBXGroup;
 			children = (
+				98E463D41A48D17A00BEBDF7 /* Fabric.app */,
+				98E463CF1A48C4C800BEBDF7 /* Twitter.framework */,
 				38E68C1B19F754C000180BDF /* FacebookSDK.framework */,
 				38E68BF419F72FDC00180BDF /* Moose */,
 				38E68C0E19F72FDC00180BDF /* MooseTests */,
@@ -93,6 +102,8 @@
 				38E68C0219F72FDC00180BDF /* Images.xcassets */,
 				38E68C0419F72FDC00180BDF /* LaunchScreen.xib */,
 				38E68BF519F72FDC00180BDF /* Supporting Files */,
+				98E463D11A48CBAC00BEBDF7 /* UICardView.h */,
+				98E463D21A48CBAC00BEBDF7 /* UICardView.m */,
 			);
 			path = Moose;
 			sourceTree = "<group>";
@@ -225,6 +236,7 @@
 			files = (
 				38E68BFE19F72FDC00180BDF /* ViewController.m in Sources */,
 				38E68BFB19F72FDC00180BDF /* AppDelegate.m in Sources */,
+				98E463D31A48CBAC00BEBDF7 /* UICardView.m in Sources */,
 				38E68BF819F72FDC00180BDF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
