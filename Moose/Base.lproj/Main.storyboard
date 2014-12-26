@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="width" constant="299" id="HJB-qZ-HE2"/>
                                     <constraint firstAttribute="height" constant="146" id="sge-ZC-ekH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="79"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="79"/>
                                 <color key="textColor" red="0.50196081399917603" green="0.25098040699958801" blue="0.0" alpha="0.82000000000000006" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -41,7 +41,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEY-yH-UaV" customClass="UICardView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEY-yH-UaV" customClass="UICardView">
                                 <rect key="frame" x="150" y="170" width="300" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QM-JF-uWW">
@@ -52,6 +52,10 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="VBx-QV-FOh"/>
+                                    <constraint firstAttribute="width" constant="300" id="nZR-21-VeX"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.62985405030204311" green="0.80819894114330415" blue="1" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
@@ -60,12 +64,16 @@
                             <constraint firstAttribute="centerY" secondItem="G5y-T6-l5N" secondAttribute="centerY" constant="-225.5" id="2aM-mB-u4c"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="NGz-hq-s1y" secondAttribute="bottom" constant="426" id="5cB-rF-yMe"/>
                             <constraint firstItem="NGz-hq-s1y" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="6VJ-gq-0TC"/>
+                            <constraint firstAttribute="centerX" secondItem="bEY-yH-UaV" secondAttribute="centerX" id="Dh9-P3-fTM"/>
                             <constraint firstItem="G5y-T6-l5N" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="141" id="FrI-HP-IQ2"/>
                             <constraint firstAttribute="centerY" secondItem="NGz-hq-s1y" secondAttribute="centerY" id="L91-1q-cGq"/>
                             <constraint firstItem="NGz-hq-s1y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="135" id="M1g-am-gao"/>
+                            <constraint firstItem="bEY-yH-UaV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="150" id="PiU-HR-pRk"/>
+                            <constraint firstAttribute="centerY" secondItem="bEY-yH-UaV" secondAttribute="centerY" constant="-20" id="U82-LX-VBZ"/>
                             <constraint firstAttribute="centerY" secondItem="G5y-T6-l5N" secondAttribute="centerY" constant="-225" id="Ve2-gt-EN1"/>
                             <constraint firstAttribute="centerY" secondItem="NGz-hq-s1y" secondAttribute="centerY" constant="199" id="dug-3j-xED"/>
                             <constraint firstAttribute="centerX" secondItem="NGz-hq-s1y" secondAttribute="centerX" id="fwm-BR-bRo"/>
+                            <constraint firstItem="G5y-T6-l5N" firstAttribute="top" secondItem="bEY-yH-UaV" secondAttribute="bottom" constant="23" id="kBN-vL-HEM"/>
                             <constraint firstAttribute="centerY" secondItem="NGz-hq-s1y" secondAttribute="centerY" constant="183" id="p6M-hx-yF6"/>
                             <constraint firstAttribute="centerX" secondItem="G5y-T6-l5N" secondAttribute="centerX" id="ptm-0l-cuN"/>
                             <constraint firstAttribute="centerY" secondItem="NGz-hq-s1y" secondAttribute="centerY" id="w2b-NE-mCN"/>
