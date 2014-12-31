@@ -32,6 +32,9 @@
 		98A30C9A1A53679900A3FC50 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A30C981A53679900A3FC50 /* libz.dylib */; };
 		98E463D01A48C4C800BEBDF7 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E463CF1A48C4C800BEBDF7 /* Twitter.framework */; };
 		98E463D31A48CBAC00BEBDF7 /* UICardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E463D21A48CBAC00BEBDF7 /* UICardView.m */; };
+		98F338771A546FCF00C7E4C3 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F338761A546FCF00C7E4C3 /* ParseFacebookUtils.framework */; };
+		98F338791A54A00C00C7E4C3 /* fb_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F338781A54A00C00C7E4C3 /* fb_login.png */; };
+		98F3387B1A54A56A00C7E4C3 /* fb_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F3387A1A54A56A00C7E4C3 /* fb_logout.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +80,9 @@
 		98E463CF1A48C4C800BEBDF7 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		98E463D11A48CBAC00BEBDF7 /* UICardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICardView.h; sourceTree = "<group>"; };
 		98E463D21A48CBAC00BEBDF7 /* UICardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICardView.m; sourceTree = "<group>"; };
-		98E463D41A48D17A00BEBDF7 /* Fabric.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Fabric.app; path = ../../../Downloads/Fabric.app; sourceTree = "<group>"; };
+		98F338761A546FCF00C7E4C3 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		98F338781A54A00C00C7E4C3 /* fb_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_login.png; sourceTree = "<group>"; };
+		98F3387A1A54A56A00C7E4C3 /* fb_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_logout.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 			files = (
 				98A30C991A53679900A3FC50 /* libsqlite3.dylib in Frameworks */,
 				98A30C9A1A53679900A3FC50 /* libz.dylib in Frameworks */,
+				98F338771A546FCF00C7E4C3 /* ParseFacebookUtils.framework in Frameworks */,
 				98A30C911A53677700A3FC50 /* CoreLocation.framework in Frameworks */,
 				98A30C921A53677700A3FC50 /* MobileCoreServices.framework in Frameworks */,
 				98A30C931A53677700A3FC50 /* QuartzCore.framework in Frameworks */,
@@ -118,6 +124,7 @@
 		38E68BE919F72FDC00180BDF = {
 			isa = PBXGroup;
 			children = (
+				98F338761A546FCF00C7E4C3 /* ParseFacebookUtils.framework */,
 				98A30C971A53679900A3FC50 /* libsqlite3.dylib */,
 				98A30C981A53679900A3FC50 /* libz.dylib */,
 				98A30C8B1A53677700A3FC50 /* CoreLocation.framework */,
@@ -133,7 +140,6 @@
 				98A30C821A53670F00A3FC50 /* Parse.framework */,
 				98A30C7F1A51F33A00A3FC50 /* Social.framework */,
 				98A30C7D1A51F22800A3FC50 /* Accounts.framework */,
-				98E463D41A48D17A00BEBDF7 /* Fabric.app */,
 				98E463CF1A48C4C800BEBDF7 /* Twitter.framework */,
 				38E68C1B19F754C000180BDF /* FacebookSDK.framework */,
 				38E68BF419F72FDC00180BDF /* Moose */,
@@ -171,6 +177,8 @@
 		38E68BF519F72FDC00180BDF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				98F3387A1A54A56A00C7E4C3 /* fb_logout.png */,
+				98F338781A54A00C00C7E4C3 /* fb_login.png */,
 				38E68BF619F72FDC00180BDF /* Info.plist */,
 				38E68BF719F72FDC00180BDF /* main.m */,
 			);
@@ -274,9 +282,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98F3387B1A54A56A00C7E4C3 /* fb_logout.png in Resources */,
 				38E68C0119F72FDC00180BDF /* Main.storyboard in Resources */,
 				38E68C0619F72FDC00180BDF /* LaunchScreen.xib in Resources */,
 				38E68C0319F72FDC00180BDF /* Images.xcassets in Resources */,
+				98F338791A54A00C00C7E4C3 /* fb_login.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

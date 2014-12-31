@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <Parse/Parse.h>
 
 @interface AppDelegate ()
@@ -29,6 +30,8 @@
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    [PFFacebookUtils initializeFacebook];
         
     return YES;
 }
@@ -50,6 +53,8 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+    
     // Logs 'install' and 'app activate' App Events.
     [FBAppEvents activateApp];
 }
@@ -65,7 +70,9 @@
     NSLog(@"successfully logged into fb");
     
     // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
-    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    BOOL wasHandled = [FBAppCall handleOpenURL:url
+                             sourceApplication:sourceApplication
+                                   withSession:[PFFacebookUtils session]];
     
     // You can add your app-specific url handling code here if needed
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -84,6 +91,9 @@
                               
                               NSLog(@"result was received: %@", result);
                               /* handle the result */
+                              
+                              
+                              
                           }];
 
     
