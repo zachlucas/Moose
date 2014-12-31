@@ -7,6 +7,7 @@
 //
 
 #import "UICardView.h"
+#import <QuartzCore/QuartzCore.h>
 
 CFTimeInterval startTime;
 CGPoint startPoint;
@@ -24,12 +25,16 @@ BOOL imageViewTouched;
 }
 */
 
+- (void)awakeFromNib{
+    NSLog(@"Card loaded");
+    self.layer.zPosition = 10;
+
+}
+
 - (void)viewDidLoad {
     // Tinder but most recent
     // status or tweet
     // rather than photo
-    
-    NSLog(@"Card loaded");
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -45,7 +50,7 @@ BOOL imageViewTouched;
     startTime = CACurrentMediaTime();
     imageViewTouched = YES;
 }
-/*
+
 -(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *aTouch = [touches anyObject];
     CGPoint location = [aTouch locationInView:self];
@@ -61,8 +66,8 @@ BOOL imageViewTouched;
     else{
         [self setBackgroundColor:[UIColor whiteColor]];
     }
-}*/
-
+}
+/*
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
 
@@ -81,7 +86,7 @@ BOOL imageViewTouched;
     NSLog(@"newpoint: %f,%f",newPoint.x,newPoint.y);
 
     oldPoint = newPoint;
-}
+}*/
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -99,7 +104,7 @@ BOOL imageViewTouched;
     CFTimeInterval timeDifference = endTime - startTime;
     
     // You may play with this value until you get your desired effect
-    CGFloat maxSpeed = 200;
+    CGFloat maxSpeed = 1000;
     
     CGFloat deltaX = 0;
     CGFloat deltaY = 0;

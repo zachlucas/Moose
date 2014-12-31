@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <Twitter/Twitter.h>
+#import <Parse/Parse.h>
 
 @interface ViewController ()
 
@@ -23,8 +24,8 @@
     FBLoginView *loginView = [[FBLoginView alloc] init];
     //loginView.center = self.view.center;
     //[self.view addSubview:loginView];
-    /*
-    TWTRLogInButton* logInButton =  [TWTRLogInButton
+    // Twitter
+    /*TWTRLogInButton* logInButton =  [TWTRLogInButton
                                      buttonWithLogInCompletion:
                                      ^(TWTRSession* session, NSError* error) {
                                          if (session) {
@@ -33,8 +34,12 @@
                                              NSLog(@"error: %@", [error localizedDescription]);
                                          }
                                      }];
-    logInButton.center = self.view.center;*/
-    //[self.view addSubview:logInButton];
+    logInButton.center = self.view.center;
+    [self.view addSubview:logInButton];*/
+    
+    //PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    //testObject[@"foo"] = @"bar";
+    //[testObject saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning {
