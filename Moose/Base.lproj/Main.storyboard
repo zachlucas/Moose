@@ -28,18 +28,55 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEY-yH-UaV" customClass="UICardView">
                                 <rect key="frame" x="150" y="170" width="300" height="300"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QM-JF-uWW">
-                                        <rect key="frame" x="107" y="38" width="86" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8QM-JF-uWW">
+                                        <rect key="frame" x="3" y="3" width="294" height="294"/>
+                                        <color key="backgroundColor" white="0.88723273026315785" alpha="0.91000000000000003" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="284" id="bLu-2a-gMu"/>
+                                            <constraint firstAttribute="height" constant="272" id="zmL-hz-dAg"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="bLu-2a-gMu"/>
+                                                <exclude reference="zmL-hz-dAg"/>
+                                            </mask>
+                                        </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8QM-JF-uWW" secondAttribute="trailing" constant="3" id="09N-Sm-3RD"/>
+                                    <constraint firstAttribute="trailing" secondItem="8QM-JF-uWW" secondAttribute="trailing" constant="8" id="8Ny-Hw-QGv"/>
+                                    <constraint firstAttribute="centerY" secondItem="8QM-JF-uWW" secondAttribute="centerY" id="9nF-K8-vxK"/>
+                                    <constraint firstItem="8QM-JF-uWW" firstAttribute="top" secondItem="bEY-yH-UaV" secondAttribute="top" constant="8" id="JcZ-HS-RV8"/>
+                                    <constraint firstItem="8QM-JF-uWW" firstAttribute="leading" secondItem="bEY-yH-UaV" secondAttribute="leading" constant="8" id="MOv-M0-ErP"/>
+                                    <constraint firstAttribute="bottom" secondItem="8QM-JF-uWW" secondAttribute="bottom" constant="8" id="NK6-y0-zsb"/>
                                     <constraint firstAttribute="height" constant="300" id="VBx-QV-FOh"/>
+                                    <constraint firstItem="8QM-JF-uWW" firstAttribute="width" secondItem="bEY-yH-UaV" secondAttribute="width" id="fBg-tc-p6N"/>
+                                    <constraint firstItem="8QM-JF-uWW" firstAttribute="leading" secondItem="bEY-yH-UaV" secondAttribute="leading" constant="8" id="fK4-4D-B01"/>
+                                    <constraint firstItem="8QM-JF-uWW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bEY-yH-UaV" secondAttribute="leading" constant="3" id="hzQ-rL-QKC"/>
+                                    <constraint firstItem="8QM-JF-uWW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bEY-yH-UaV" secondAttribute="leading" constant="8" id="mEy-0J-FnM"/>
                                     <constraint firstAttribute="width" constant="300" id="nZR-21-VeX"/>
+                                    <constraint firstItem="8QM-JF-uWW" firstAttribute="leading" secondItem="bEY-yH-UaV" secondAttribute="leading" constant="3" id="pe3-Vm-miz"/>
+                                    <constraint firstAttribute="bottom" secondItem="8QM-JF-uWW" secondAttribute="bottom" constant="3" id="qPU-ag-0BQ"/>
+                                    <constraint firstItem="8QM-JF-uWW" firstAttribute="top" secondItem="bEY-yH-UaV" secondAttribute="top" constant="3" id="vLt-Mt-JuI"/>
+                                    <constraint firstItem="8QM-JF-uWW" firstAttribute="height" secondItem="bEY-yH-UaV" secondAttribute="height" id="z0K-31-grc"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8Ny-Hw-QGv"/>
+                                        <exclude reference="JcZ-HS-RV8"/>
+                                        <exclude reference="MOv-M0-ErP"/>
+                                        <exclude reference="NK6-y0-zsb"/>
+                                        <exclude reference="fBg-tc-p6N"/>
+                                        <exclude reference="fK4-4D-B01"/>
+                                        <exclude reference="mEy-0J-FnM"/>
+                                        <exclude reference="z0K-31-grc"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOOSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGz-hq-s1y">
                                 <rect key="frame" x="151" y="0.0" width="299" height="93"/>
@@ -50,7 +87,7 @@
                                     <constraint firstAttribute="height" constant="93" id="zm0-mW-Six"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="79"/>
-                                <color key="textColor" red="0.50196081399917603" green="0.25098040699958801" blue="0.0" alpha="0.82000000000000006" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.47090041035353536" green="0.23559435899673861" blue="0.0" alpha="0.91000000000000003" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -60,7 +97,7 @@
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.83052990471143306" green="0.9428676981972931" blue="1" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.83052990471143306" green="0.9428676981972931" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="NGz-hq-s1y" secondAttribute="centerY" constant="199" id="0IA-FB-GGl"/>
                             <constraint firstAttribute="centerY" secondItem="G5y-T6-l5N" secondAttribute="centerY" constant="-225.5" id="2aM-mB-u4c"/>
