@@ -21,9 +21,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    FBLoginView *loginView = [[FBLoginView alloc] init];
+    FBLoginView *loginView =
+    [[FBLoginView alloc] initWithReadPermissions:
+     @[@"public_profile", @"email", @"user_friends", @"read_stream"]];
+    
+    loginView.center = CGPointMake(200, 600);
+    
     //loginView.center = self.view.center;
-    //[self.view addSubview:loginView];
+    [self.view addSubview:loginView];
     // Twitter
     /*TWTRLogInButton* logInButton =  [TWTRLogInButton
                                      buttonWithLogInCompletion:

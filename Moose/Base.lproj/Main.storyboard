@@ -17,14 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5y-T6-l5N" customClass="FBLoginView">
-                                <rect key="frame" x="157" y="493" width="287" height="65"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="IiK-oL-sqA"/>
-                                    <constraint firstAttribute="width" constant="287" id="y6D-ir-C2k"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEY-yH-UaV" customClass="UICardView">
                                 <rect key="frame" x="150" y="170" width="300" height="300"/>
                                 <subviews>
@@ -100,24 +92,19 @@
                         <color key="backgroundColor" red="0.83052990471143306" green="0.9428676981972931" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="NGz-hq-s1y" secondAttribute="centerY" constant="199" id="0IA-FB-GGl"/>
-                            <constraint firstAttribute="centerY" secondItem="G5y-T6-l5N" secondAttribute="centerY" constant="-225.5" id="2aM-mB-u4c"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="NGz-hq-s1y" secondAttribute="bottom" constant="426" id="5cB-rF-yMe"/>
                             <constraint firstItem="NGz-hq-s1y" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="6VJ-gq-0TC"/>
                             <constraint firstItem="NGz-hq-s1y" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-20" id="B5L-TX-6wa"/>
                             <constraint firstAttribute="centerX" secondItem="bEY-yH-UaV" secondAttribute="centerX" id="Dh9-P3-fTM"/>
-                            <constraint firstItem="G5y-T6-l5N" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="141" id="FrI-HP-IQ2"/>
                             <constraint firstAttribute="centerY" secondItem="NGz-hq-s1y" secondAttribute="centerY" id="L91-1q-cGq"/>
                             <constraint firstItem="NGz-hq-s1y" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="135" id="M1g-am-gao"/>
                             <constraint firstItem="bEY-yH-UaV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="150" id="PiU-HR-pRk"/>
                             <constraint firstItem="NGz-hq-s1y" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-30" id="SP7-7F-og1"/>
                             <constraint firstAttribute="centerY" secondItem="bEY-yH-UaV" secondAttribute="centerY" constant="-20" id="U82-LX-VBZ"/>
-                            <constraint firstAttribute="centerY" secondItem="G5y-T6-l5N" secondAttribute="centerY" constant="-225" id="Ve2-gt-EN1"/>
                             <constraint firstAttribute="centerY" secondItem="NGz-hq-s1y" secondAttribute="centerY" constant="199" id="dug-3j-xED"/>
                             <constraint firstAttribute="centerX" secondItem="NGz-hq-s1y" secondAttribute="centerX" id="fwm-BR-bRo"/>
                             <constraint firstAttribute="centerX" secondItem="NGz-hq-s1y" secondAttribute="centerX" constant="-0.5" id="fz1-JI-zXu"/>
-                            <constraint firstItem="G5y-T6-l5N" firstAttribute="top" secondItem="bEY-yH-UaV" secondAttribute="bottom" constant="23" id="kBN-vL-HEM"/>
                             <constraint firstAttribute="centerY" secondItem="NGz-hq-s1y" secondAttribute="centerY" constant="183" id="p6M-hx-yF6"/>
-                            <constraint firstAttribute="centerX" secondItem="G5y-T6-l5N" secondAttribute="centerX" id="ptm-0l-cuN"/>
                             <constraint firstAttribute="centerY" secondItem="NGz-hq-s1y" secondAttribute="centerY" id="w2b-NE-mCN"/>
                         </constraints>
                         <variation key="default">
@@ -131,8 +118,6 @@
                                 <exclude reference="fwm-BR-bRo"/>
                                 <exclude reference="p6M-hx-yF6"/>
                                 <exclude reference="w2b-NE-mCN"/>
-                                <exclude reference="2aM-mB-u4c"/>
-                                <exclude reference="FrI-HP-IQ2"/>
                                 <exclude reference="5cB-rF-yMe"/>
                             </mask>
                         </variation>

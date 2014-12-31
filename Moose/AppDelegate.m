@@ -29,7 +29,7 @@
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
+        
     return YES;
 }
 
@@ -62,8 +62,32 @@
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
-    // attempt to extract a token from the url
-    return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    NSLog(@"successfully logged into fb");
+    
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                            @"location", @"with",
+                            nil
+                            ];
+    /* make the API call */
+    [FBRequestConnection startWithGraphPath:@"/me/posts"
+                                 parameters:params
+                                 HTTPMethod:@"GET"
+                          completionHandler:^(
+                                              FBRequestConnection *connection,
+                                              id result,
+                                              NSError *error
+                                              ) {
+                              
+                              NSLog(@"result was received: %@", result);
+                              /* handle the result */
+                          }];
+
+    
+    return wasHandled;
 }
 
 @end
