@@ -45,6 +45,8 @@ BOOL imageViewTouched;
         return;
     }
     
+    originalPosition = self.frame;
+    
     startPoint = [touch locationInView:self];
     oldPoint = startPoint;
     startTime = CACurrentMediaTime();
@@ -57,10 +59,10 @@ BOOL imageViewTouched;
     CGPoint previousLocation = [aTouch previousLocationInView:self];
     self.frame = CGRectOffset(self.frame, (location.x - previousLocation.x), (location.y - previousLocation.y));
         
-    if (self.frame.origin.x > 200){
+    if (self.frame.origin.x > 175){
         [self setBackgroundColor:[UIColor greenColor]];
     }
-    else if (self.frame.origin.x < -200){
+    else if (self.frame.origin.x < -175){
         [self setBackgroundColor:[UIColor redColor]];
     }
     else{
@@ -90,8 +92,10 @@ BOOL imageViewTouched;
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    NSLog(@"touches ended");
+    
     // Fingers were removed from the screen but your image view was not touched in the beginning
-    if (!imageViewTouched) {
+    /*if (!imageViewTouched) {
         return;
     }
     
@@ -128,7 +132,13 @@ BOOL imageViewTouched;
     
     self.frame = CGRectOffset(self.frame, deltaX, deltaY);
     
-    [UIView commitAnimations];
+    [UIView commitAnimations];*/
+    
+    
+    [UIView animateWithDuration:0.4 delay:0 usingSpringWithDamping:0.35f initialSpringVelocity:0.25f options:nil animations:^{
+        [self setFrame:originalPosition];
+    }completion:nil];
+
 }
 
 

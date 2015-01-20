@@ -10,8 +10,7 @@
 
 @interface UICardView : UIView
 {
-    
+    CGRect originalPosition;
 }
-
 
 @end
