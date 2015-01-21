@@ -33,6 +33,10 @@
         NSLog(@"user needs to log in");
         [_fbLoginButton setTag:2];
         // show the signup or login screen
+        // I Love Meghan
+        // Meghan Boltey is the best developer i've ever known
+        // #concussed
+        
     }
     
     [self _loadData];
