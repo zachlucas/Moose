@@ -14,7 +14,6 @@
 		38E68C0319F72FDC00180BDF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E68C0219F72FDC00180BDF /* Images.xcassets */; };
 		38E68C0619F72FDC00180BDF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38E68C0419F72FDC00180BDF /* LaunchScreen.xib */; };
 		38E68C1219F72FDC00180BDF /* MooseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E68C1119F72FDC00180BDF /* MooseTests.m */; };
-		981930F71A43DC550039F583 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E68C1B19F754C000180BDF /* FacebookSDK.framework */; };
 		98A30C7E1A51F22800A3FC50 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A30C7D1A51F22800A3FC50 /* Accounts.framework */; };
 		98A30C801A51F33A00A3FC50 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A30C7F1A51F33A00A3FC50 /* Social.framework */; };
 		98A30C831A53670F00A3FC50 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A30C811A53670F00A3FC50 /* Bolts.framework */; };
@@ -35,6 +34,8 @@
 		98F338771A546FCF00C7E4C3 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F338761A546FCF00C7E4C3 /* ParseFacebookUtils.framework */; };
 		98F338791A54A00C00C7E4C3 /* fb_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F338781A54A00C00C7E4C3 /* fb_login.png */; };
 		98F3387B1A54A56A00C7E4C3 /* fb_logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 98F3387A1A54A56A00C7E4C3 /* fb_logout.png */; };
+		B3EB9D2E1A705B03008202C5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E68C1B19F754C000180BDF /* FacebookSDK.framework */; };
+		B3EB9D311A706BC8008202C5 /* mooseLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B3EB9D301A706BC8008202C5 /* mooseLaunchImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		98F338761A546FCF00C7E4C3 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		98F338781A54A00C00C7E4C3 /* fb_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_login.png; sourceTree = "<group>"; };
 		98F3387A1A54A56A00C7E4C3 /* fb_logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_logout.png; sourceTree = "<group>"; };
+		B3EB9D301A706BC8008202C5 /* mooseLaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mooseLaunchImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3EB9D2E1A705B03008202C5 /* FacebookSDK.framework in Frameworks */,
 				98A30C991A53679900A3FC50 /* libsqlite3.dylib in Frameworks */,
 				98A30C9A1A53679900A3FC50 /* libz.dylib in Frameworks */,
 				98F338771A546FCF00C7E4C3 /* ParseFacebookUtils.framework in Frameworks */,
@@ -107,7 +110,6 @@
 				98A30C7E1A51F22800A3FC50 /* Accounts.framework in Frameworks */,
 				98E463D01A48C4C800BEBDF7 /* Twitter.framework in Frameworks */,
 				98A30C841A53670F00A3FC50 /* Parse.framework in Frameworks */,
-				981930F71A43DC550039F583 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +172,7 @@
 				38E68BF519F72FDC00180BDF /* Supporting Files */,
 				98E463D11A48CBAC00BEBDF7 /* UICardView.h */,
 				98E463D21A48CBAC00BEBDF7 /* UICardView.m */,
+				B3EB9D2F1A706BC8008202C5 /* assets */,
 			);
 			path = Moose;
 			sourceTree = "<group>";
@@ -200,6 +203,14 @@
 				38E68C1019F72FDC00180BDF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3EB9D2F1A706BC8008202C5 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				B3EB9D301A706BC8008202C5 /* mooseLaunchImage.png */,
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +297,7 @@
 				38E68C0119F72FDC00180BDF /* Main.storyboard in Resources */,
 				38E68C0619F72FDC00180BDF /* LaunchScreen.xib in Resources */,
 				38E68C0319F72FDC00180BDF /* Images.xcassets in Resources */,
+				B3EB9D311A706BC8008202C5 /* mooseLaunchImage.png in Resources */,
 				98F338791A54A00C00C7E4C3 /* fb_login.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +446,7 @@
 					/Users/gohome190/Documents/FacebookSDK,
 					/Users/zachlucas/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
+					/Users/zacharylucas/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = Moose/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -450,6 +463,7 @@
 					/Users/gohome190/Documents/FacebookSDK,
 					/Users/zachlucas/Documents/FacebookSDK,
 					"$(PROJECT_DIR)",
+					/Users/zacharylucas/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = Moose/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

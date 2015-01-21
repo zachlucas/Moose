@@ -111,8 +111,10 @@
                     FBRequest *request = [FBRequest requestForGraphPath:@"/me/statuses"];
                     [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                         // handle response
-                        NSLog(@"FB Request made");
-                        NSLog(@"result: %@",result);
+                        NSLog(@"FB Request made");                        
+                        //NSLog(@"data? %@:",[result objectForKey:@"data"]);
+                        NSMutableArray *data = [result objectForKey:@"data"];
+                        NSLog(@"first obj: %@",[data firstObject]);
                     }];
 
                     
