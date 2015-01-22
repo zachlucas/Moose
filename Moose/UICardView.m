@@ -104,7 +104,20 @@ BOOL imageViewTouched;
         NSLog (@"Successfully received the test notification!");
         NSLog(@":::%@",notification.object);
         NSLog(@"UILabel: %@",self.statusLabel);
-        [self.statusLabel setText:notification.object];
+        [self.statusLabel setText:[notification.object objectForKey:@"message" ]];
+        
+        NSString* dateWithInitialFormat = [notification.object objectForKey:@"updated_time"];
+        dateWithInitialFormat = [dateWithInitialFormat substringToIndex:10];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        NSDate *date = [dateFormatter dateFromString:dateWithInitialFormat];
+        
+        [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+        NSString *dateWithNewFormat = [dateFormatter stringFromDate:date];
+        NSLog(@"dateWithNewFormat: %@", dateWithNewFormat);
+        
+        [self.dateLabel setText:dateWithNewFormat];
+
     }
 }
 

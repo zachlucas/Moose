@@ -49,6 +49,15 @@
         // handle response
         NSLog(@"FB Reuqest made");
         NSLog(@"result: %@",result);
+        if (result) {
+            NSMutableArray *data = [result objectForKey:@"data"];
+            
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"first_status"
+             object:[data firstObject]];
+
+        }
+
     }];
 }
 
@@ -115,10 +124,11 @@
                         //NSLog(@"data? %@:",[result objectForKey:@"data"]);
                         NSMutableArray *data = [result objectForKey:@"data"];
                         //NSLog(@"first obj: %@",[data firstObject]);
-                        NSLog(@"first status: %@", [[data firstObject] objectForKey:@"message"]);
+                        NSLog(@"first status: %@", [[data firstObject] objectForKey:@"updated_time"]);
+                        
                         [[NSNotificationCenter defaultCenter]
                          postNotificationName:@"first_status"
-                         object:[[data firstObject] objectForKey:@"message"]];
+                         object:[data firstObject]];
 
                     }];
 
