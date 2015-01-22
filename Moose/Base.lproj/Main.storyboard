@@ -70,6 +70,9 @@
                                         <exclude reference="z0K-31-grc"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="statusLabel" destination="8QM-JF-uWW" id="g9r-bX-mD0"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MOOSE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGz-hq-s1y">
                                 <rect key="frame" x="151" y="10" width="299" height="93"/>

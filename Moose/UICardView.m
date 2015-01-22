@@ -25,6 +25,14 @@ BOOL imageViewTouched;
 }
 */
 
+-(id)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    
+    
+    
+    return self;
+}
+
 - (void)awakeFromNib{
     NSLog(@"Card loaded");
     self.layer.zPosition = 10;
@@ -37,6 +45,8 @@ BOOL imageViewTouched;
 }
 
 - (void)viewDidLoad {
+    [[self subviews] objectAtIndex:0];
+    
     // Tinder but most recent
     // status or tweet
     // rather than photo
@@ -92,7 +102,9 @@ BOOL imageViewTouched;
     
     if ([[notification name] isEqualToString:@"first_status"]){
         NSLog (@"Successfully received the test notification!");
-        NSLog(@":::%@",notification.userInfo);
+        NSLog(@":::%@",notification.object);
+        NSLog(@"UILabel: %@",self.statusLabel);
+        [self.statusLabel setText:notification.object];
     }
 }
 
