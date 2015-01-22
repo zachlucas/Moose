@@ -28,6 +28,11 @@ BOOL imageViewTouched;
 - (void)awakeFromNib{
     NSLog(@"Card loaded");
     self.layer.zPosition = 10;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTestNotification:)
+                                                 name:@"first_status"
+                                               object:nil];
 
 }
 
@@ -69,77 +74,28 @@ BOOL imageViewTouched;
         [self setBackgroundColor:[UIColor whiteColor]];
     }
 }
-/*
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-
-    // Fingers were moved on the screen but your image view was not touched in the beginning
-    if (!imageViewTouched) {
-        return;
-    }
-    
-    UITouch *touch = [[event allTouches] anyObject];
-    CGPoint newPoint = [touch locationInView:self];
-    
-    self.frame = CGRectOffset(self.frame, newPoint.x - oldPoint.x, newPoint.y - oldPoint.y);
-    
-    NSLog(@"new loc: %f, %f",newPoint.x - oldPoint.x,newPoint.y - oldPoint.y);
-    NSLog(@"oldpoint: %f,%f",oldPoint.x,oldPoint.y);
-    NSLog(@"newpoint: %f,%f",newPoint.x,newPoint.y);
-
-    oldPoint = newPoint;
-}*/
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     NSLog(@"touches ended");
-    
-    // Fingers were removed from the screen but your image view was not touched in the beginning
-    /*if (!imageViewTouched) {
-        return;
-    }
-    
-    imageViewTouched = NO;
-    
-    UITouch *touch = [[event allTouches] anyObject];
-    CGPoint endPoint = [touch locationInView:self];
-    CFTimeInterval endTime = CACurrentMediaTime();
-    
-    CFTimeInterval timeDifference = endTime - startTime;
-    
-    // You may play with this value until you get your desired effect
-    CGFloat maxSpeed = 1000;
-    
-    CGFloat deltaX = 0;
-    CGFloat deltaY = 0;
-    
-    if (timeDifference < 0.35) {
-        deltaX = (endPoint.x - startPoint.x) / (timeDifference * 10);
-        deltaY = (endPoint.y - startPoint.y) / (timeDifference * 10);
-    }
-    
-    if      (deltaX > maxSpeed)         { deltaX =  maxSpeed; }
-    else if (deltaX < -maxSpeed)        { deltaX = -maxSpeed; }
-    else if (deltaX > -5 && deltaX < 5) { deltaX = 0; }
-    
-    if      (deltaY > maxSpeed)         { deltaY =  maxSpeed; }
-    else if (deltaY < -maxSpeed)        { deltaY = -maxSpeed; }
-    else if (deltaY > -5 && deltaY < 5) { deltaY = 0; }
-    
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5f];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-    
-    self.frame = CGRectOffset(self.frame, deltaX, deltaY);
-    
-    [UIView commitAnimations];*/
-    
-    
     [UIView animateWithDuration:0.4 delay:0 usingSpringWithDamping:0.35f initialSpringVelocity:0.25f options:nil animations:^{
         [self setFrame:originalPosition];
     }completion:nil];
 
 }
+
+- (void) receiveTestNotification:(NSNotification *) notification
+{
+    // [notification name] should always be @"TestNotification"
+    // unless you use this method for observation of other notifications
+    // as well.
+    
+    if ([[notification name] isEqualToString:@"first_status"]){
+        NSLog (@"Successfully received the test notification!");
+        NSLog(@":::%@",notification.userInfo);
+    }
+}
+
 
 
 @end

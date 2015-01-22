@@ -114,7 +114,12 @@
                         NSLog(@"FB Request made");                        
                         //NSLog(@"data? %@:",[result objectForKey:@"data"]);
                         NSMutableArray *data = [result objectForKey:@"data"];
-                        NSLog(@"first obj: %@",[data firstObject]);
+                        //NSLog(@"first obj: %@",[data firstObject]);
+                        NSLog(@"first status: %@", [[data firstObject] objectForKey:@"message"]);
+                        [[NSNotificationCenter defaultCenter]
+                         postNotificationName:@"first_status"
+                         object:[[data firstObject] objectForKey:@"message"]];
+
                     }];
 
                     
