@@ -8,6 +8,9 @@
 
 #import "UICardView.h"
 #import <QuartzCore/QuartzCore.h>
+#import <Parse/Parse.h>
+
+#define NUMBER_OF_STATUSES_TO_SAVE 5
 
 CFTimeInterval startTime;
 CGPoint startPoint;
@@ -102,11 +105,12 @@ BOOL imageViewTouched;
     
     if ([[notification name] isEqualToString:@"first_status"]){
         NSLog (@"Successfully received the test notification!");
-        NSLog(@":::%@",notification.object);
+        NSLog(@":::%@",[notification.object firstObject]);
         NSLog(@"UILabel: %@",self.statusLabel);
-        [self.statusLabel setText:[notification.object objectForKey:@"message" ]];
+        NSString* statusText = [[notification.object firstObject] objectForKey:@"message"];
+        [self.statusLabel setText:statusText];
         
-        NSString* dateWithInitialFormat = [notification.object objectForKey:@"updated_time"];
+        NSString* dateWithInitialFormat = [[notification.object firstObject] objectForKey:@"updated_time"];
         dateWithInitialFormat = [dateWithInitialFormat substringToIndex:10];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -117,7 +121,27 @@ BOOL imageViewTouched;
         NSLog(@"dateWithNewFormat: %@", dateWithNewFormat);
         
         [self.dateLabel setText:dateWithNewFormat];
+        
+        PFUser* currentUser = [PFUser currentUser];
+        
+        for (int i = 0; i<NUMBER_OF_STATUSES_TO_SAVE; i++) {
+            if ([notification.object objectAtIndex:i]){
+                NSString* statusTextToSave = [[notification.object objectAtIndex:i] objectForKey:@"message"];
+                
+                NSString* dateWithInitialFormatToSave = [[notification.object objectAtIndex:i] objectForKey:@"updated_time"];
+                dateWithInitialFormatToSave = [dateWithInitialFormatToSave substringToIndex:10];
+                NSDateFormatter *dateFormatterToSave = [[NSDateFormatter alloc] init];
+                [dateFormatterToSave setDateFormat:@"yyyy-MM-dd"];
+                NSDate *dateToSave = [dateFormatterToSave dateFromString:dateWithInitialFormatToSave];
 
+                PFObject *status = [PFObject objectWithClassName:@"status"];
+                status[@"username"] = currentUser.username;
+                status[@"text"] = statusTextToSave;
+                status[@"date"] = dateToSave;
+                [status saveInBackground];
+            }
+        }
+        
     }
 }
 

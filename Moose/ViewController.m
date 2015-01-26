@@ -128,7 +128,7 @@
                         
                         [[NSNotificationCenter defaultCenter]
                          postNotificationName:@"first_status"
-                         object:[data firstObject]];
+                         object:data];
 
                     }];
 
@@ -146,6 +146,23 @@
 
     }
     //[_activityIndicator startAnimating]; // Show loading indicator until login is finished
+}
+- (IBAction)testButton:(id)sender {
+    PFQuery *query = [PFQuery queryWithClassName:@"status"];
+    [query whereKey:@"username" containsString:[PFUser currentUser].username];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu statuses.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 - (void)_presentUserDetailsViewControllerAnimated:(BOOL)animated {

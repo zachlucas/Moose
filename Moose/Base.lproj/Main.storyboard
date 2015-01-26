@@ -133,6 +133,15 @@
                                     <action selector="facebookLoginButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Puw-T9-952"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yv7-1D-d98">
+                                <rect key="frame" x="279" y="97" width="30" height="30"/>
+                                <state key="normal" title="test">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tpL-O0-uYF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83052990471143306" green="0.9428676981972931" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
