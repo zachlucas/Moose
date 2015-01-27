@@ -67,6 +67,7 @@
         NSLog(@"Log out");
         
         PFUser *user = [PFUser currentUser];
+       /*
         [PFFacebookUtils unlinkUserInBackground:user block:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"The user is no longer associated with their Facebook account.");
@@ -76,7 +77,9 @@
             else{
                 NSLog(@"Failure");
             }
-        }];
+        }];*/
+        [PFUser logOut];
+        
         PFUser *currentUser = [PFUser currentUser]; // this will now be nil
 
         [fbButton setTag:2];

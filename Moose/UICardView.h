@@ -11,6 +11,7 @@
 @interface UICardView : UIView
 {
     CGRect originalPosition;
+    BOOL didUploadStatuses;
 }
 
 @property (weak,nonatomic) IBOutlet UILabel* statusLabel;

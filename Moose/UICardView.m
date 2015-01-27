@@ -39,7 +39,7 @@ BOOL imageViewTouched;
 - (void)awakeFromNib{
     NSLog(@"Card loaded");
     self.layer.zPosition = 10;
-    
+    didUploadStatuses = false;
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveTestNotification:)
                                                  name:@"first_status"
@@ -123,24 +123,26 @@ BOOL imageViewTouched;
         [self.dateLabel setText:dateWithNewFormat];
         
         PFUser* currentUser = [PFUser currentUser];
-        
-        for (int i = 0; i<NUMBER_OF_STATUSES_TO_SAVE; i++) {
-            if ([notification.object objectAtIndex:i]){
-                NSString* statusTextToSave = [[notification.object objectAtIndex:i] objectForKey:@"message"];
-                
-                NSString* dateWithInitialFormatToSave = [[notification.object objectAtIndex:i] objectForKey:@"updated_time"];
-                dateWithInitialFormatToSave = [dateWithInitialFormatToSave substringToIndex:10];
-                NSDateFormatter *dateFormatterToSave = [[NSDateFormatter alloc] init];
-                [dateFormatterToSave setDateFormat:@"yyyy-MM-dd"];
-                NSDate *dateToSave = [dateFormatterToSave dateFromString:dateWithInitialFormatToSave];
+        //if (!didUploadStatuses){
+            for (int i = 0; i<NUMBER_OF_STATUSES_TO_SAVE; i++) {
+                if ([notification.object objectAtIndex:i]){
+                    NSString* statusTextToSave = [[notification.object objectAtIndex:i] objectForKey:@"message"];
+                    
+                    NSString* dateWithInitialFormatToSave = [[notification.object objectAtIndex:i] objectForKey:@"updated_time"];
+                    dateWithInitialFormatToSave = [dateWithInitialFormatToSave substringToIndex:10];
+                    NSDateFormatter *dateFormatterToSave = [[NSDateFormatter alloc] init];
+                    [dateFormatterToSave setDateFormat:@"yyyy-MM-dd"];
+                    NSDate *dateToSave = [dateFormatterToSave dateFromString:dateWithInitialFormatToSave];
 
-                PFObject *status = [PFObject objectWithClassName:@"status"];
-                status[@"username"] = currentUser.username;
-                status[@"text"] = statusTextToSave;
-                status[@"date"] = dateToSave;
-                [status saveInBackground];
+                    PFObject *status = [PFObject objectWithClassName:@"status"];
+                    status[@"username"] = currentUser.username;
+                    status[@"text"] = statusTextToSave;
+                    status[@"date"] = dateToSave;
+                    [status saveInBackground];
+                }
             }
-        }
+            didUploadStatuses = true;
+        //}
         
     }
 }
