@@ -54,7 +54,7 @@
             
             [[NSNotificationCenter defaultCenter]
              postNotificationName:@"first_status"
-             object:[data firstObject]];
+             object:data];
 
         }
 
@@ -66,9 +66,19 @@
     if (fbButton.tag == 1) {
         NSLog(@"Log out");
         
-        [PFUser logOut];
+        PFUser *user = [PFUser currentUser];
+        [PFFacebookUtils unlinkUserInBackground:user block:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"The user is no longer associated with their Facebook account.");
+                [PFUser logOut];
+
+            }
+            else{
+                NSLog(@"Failure");
+            }
+        }];
         PFUser *currentUser = [PFUser currentUser]; // this will now be nil
-        [[FBSession activeSession] closeAndClearTokenInformation];
+
         [fbButton setTag:2];
         [fbButton setImage:[UIImage imageNamed:@"fb_login.png"] forState:UIControlStateNormal];
     }
