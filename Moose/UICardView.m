@@ -77,14 +77,18 @@ BOOL imageViewTouched;
     CGPoint previousLocation = [aTouch previousLocationInView:self];
     self.frame = CGRectOffset(self.frame, (location.x - previousLocation.x), (location.y - previousLocation.y));
         
-    if (self.frame.origin.x > 175){
+    if (self.frame.origin.x > 150){
         [self setBackgroundColor:[UIColor greenColor]];
+        self.alpha = self.alpha - 0.05;
     }
-    else if (self.frame.origin.x < -175){
+    else if (self.frame.origin.x < -150){
         [self setBackgroundColor:[UIColor redColor]];
+        self.alpha = self.alpha - 0.05;
     }
     else{
         [self setBackgroundColor:[UIColor whiteColor]];
+        self.alpha = self.alpha + 0.1;
+
     }
 }
 
@@ -94,7 +98,9 @@ BOOL imageViewTouched;
     [UIView animateWithDuration:0.4 delay:0 usingSpringWithDamping:0.35f initialSpringVelocity:0.25f options:nil animations:^{
         [self setFrame:originalPosition];
     }completion:nil];
-
+    
+    [self setBackgroundColor:[UIColor whiteColor]];
+    self.alpha = 1;
 }
 
 - (void) receiveTestNotification:(NSNotification *) notification

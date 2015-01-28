@@ -11,6 +11,7 @@
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <Twitter/Twitter.h>
 #import <Parse/Parse.h>
+#import "UICardView.h"
 
 @interface ViewController ()
 
@@ -176,6 +177,14 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
+    UICardView* preexisitingCard = [[self.view subviews] firstObject];
+    
+    UICardView* view = [[UICardView alloc] initWithFrame:preexisitingCard.frame];
+    preexisitingCard.hidden = true;
+    view.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view];
+    
 }
 
 - (void)_presentUserDetailsViewControllerAnimated:(BOOL)animated {
