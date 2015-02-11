@@ -173,6 +173,9 @@
     preexisitingCard.hidden = true;
     view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
+    
+    [self performSegueWithIdentifier:@"firstTimeUserSegue" sender:self];
+
 }
 
 - (void)_presentUserDetailsViewControllerAnimated:(BOOL)animated {

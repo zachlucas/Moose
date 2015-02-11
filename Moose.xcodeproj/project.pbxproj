@@ -14,6 +14,7 @@
 		38E68C0319F72FDC00180BDF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E68C0219F72FDC00180BDF /* Images.xcassets */; };
 		38E68C0619F72FDC00180BDF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38E68C0419F72FDC00180BDF /* LaunchScreen.xib */; };
 		38E68C1219F72FDC00180BDF /* MooseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E68C1119F72FDC00180BDF /* MooseTests.m */; };
+		980D44051A8B1B7F00A2F82C /* FirstUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 980D44041A8B1B7F00A2F82C /* FirstUserViewController.m */; };
 		986073791A7870CC003227C4 /* EntranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 986073781A7870CC003227C4 /* EntranceViewController.m */; };
 		98A30C7E1A51F22800A3FC50 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A30C7D1A51F22800A3FC50 /* Accounts.framework */; };
 		98A30C801A51F33A00A3FC50 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A30C7F1A51F33A00A3FC50 /* Social.framework */; };
@@ -64,6 +65,8 @@
 		38E68C1019F72FDC00180BDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38E68C1119F72FDC00180BDF /* MooseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MooseTests.m; sourceTree = "<group>"; };
 		38E68C1B19F754C000180BDF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		980D44031A8B1B7F00A2F82C /* FirstUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstUserViewController.h; sourceTree = "<group>"; };
+		980D44041A8B1B7F00A2F82C /* FirstUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstUserViewController.m; sourceTree = "<group>"; };
 		986073771A7870CC003227C4 /* EntranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntranceViewController.h; sourceTree = "<group>"; };
 		986073781A7870CC003227C4 /* EntranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntranceViewController.m; sourceTree = "<group>"; };
 		98A30C7D1A51F22800A3FC50 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -165,6 +168,8 @@
 		38E68BF419F72FDC00180BDF /* Moose */ = {
 			isa = PBXGroup;
 			children = (
+				980D44031A8B1B7F00A2F82C /* FirstUserViewController.h */,
+				980D44041A8B1B7F00A2F82C /* FirstUserViewController.m */,
 				38E68BF919F72FDC00180BDF /* AppDelegate.h */,
 				38E68BFA19F72FDC00180BDF /* AppDelegate.m */,
 				38E68BFC19F72FDC00180BDF /* ViewController.h */,
@@ -325,6 +330,7 @@
 				38E68BFB19F72FDC00180BDF /* AppDelegate.m in Sources */,
 				98E463D31A48CBAC00BEBDF7 /* UICardView.m in Sources */,
 				38E68BF819F72FDC00180BDF /* main.m in Sources */,
+				980D44051A8B1B7F00A2F82C /* FirstUserViewController.m in Sources */,
 				986073791A7870CC003227C4 /* EntranceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -221,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="248" y="566"/>
         </scene>
-        <!--View Controller-->
+        <!--First User View Controller-->
         <scene sceneID="vEY-Tc-NS2">
             <objects>
-                <viewController id="oIO-cW-rWH" sceneMemberID="viewController">
+                <viewController id="oIO-cW-rWH" customClass="FirstUserViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="evz-op-De2"/>
                         <viewControllerLayoutGuide type="bottom" id="xZe-k1-y3q"/>
@@ -234,14 +234,63 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New user, we gonna set you up dawg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjj-lw-Wy7">
-                                <rect key="frame" x="34" y="151" width="288" height="21"/>
+                                <rect key="frame" x="31" y="86" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you a:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKO-gE-XL3">
+                                <rect key="frame" x="31" y="140" width="78" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="sJW-Ub-heU">
+                                <rect key="frame" x="31" y="180" width="249" height="29"/>
+                                <segments>
+                                    <segment title="Boy"/>
+                                    <segment title="Girl"/>
+                                    <segment title="Other"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.46846644651986113" blue="0.3400283133939932" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="genderPicker:" destination="oIO-cW-rWH" eventType="valueChanged" id="QLG-G9-iPs"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="And you're looking for a:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAW-Al-Iie">
+                                <rect key="frame" x="31" y="235" width="188" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-j7-p3F">
+                                <rect key="frame" x="31" y="279" width="249" height="29"/>
+                                <segments>
+                                    <segment title="Boy"/>
+                                    <segment title="Girl"/>
+                                    <segment title="Both 😉"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.46846644650000002" blue="0.3400283134" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="lookingForPicker:" destination="oIO-cW-rWH" eventType="valueChanged" id="gEF-PQ-0ax"/>
+                                </connections>
+                            </segmentedControl>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgr-b7-FR3">
+                                <rect key="frame" x="65" y="344" width="121" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Let's Start!">
+                                    <color key="titleColor" red="1" green="0.46846644650000002" blue="0.3400283134" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83052990469999999" green="0.94286769820000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="genderPicker" destination="sJW-Ub-heU" id="Hhg-H0-rGe"/>
+                        <outlet property="lookingForPicker" destination="z1X-j7-p3F" id="b7s-NL-73l"/>
+                        <outlet property="startButton" destination="zgr-b7-FR3" id="28h-Jt-OIK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZa-JH-1lH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
