@@ -68,19 +68,7 @@
         NSLog(@"Log out");
         
         PFUser *user = [PFUser currentUser];
-       /*
-        [PFFacebookUtils unlinkUserInBackground:user block:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                NSLog(@"The user is no longer associated with their Facebook account.");
-                [PFUser logOut];
-
-            }
-            else{
-                NSLog(@"Failure");
-            }
-        }];*/
         [PFUser logOut];
-        
         PFUser *currentUser = [PFUser currentUser]; // this will now be nil
 
         [fbButton setTag:2];
@@ -124,7 +112,8 @@
                         NSLog(@"FB Reuqest made");
                         NSLog(@"result: %@",result);
                     }];
-
+                    
+                    [self performSegueWithIdentifier:@"firstTimeUserSegue" sender:self];
 
                 } else {
                     NSLog(@"User with facebook logged in!");
@@ -184,7 +173,6 @@
     preexisitingCard.hidden = true;
     view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
-    
 }
 
 - (void)_presentUserDetailsViewControllerAnimated:(BOOL)animated {
