@@ -8,7 +8,7 @@
 
 #import "FirstUserViewController.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import <Parse/Parse.h>
 
 @interface FirstUserViewController ()
 
@@ -41,6 +41,19 @@
     if (self.genderPicker.tag){
         [self.startButton setHidden:false];
     }
+}
+- (IBAction)startButton:(id)sender {
+    PFUser* curUser = [PFUser currentUser];
+    
+    
+    curUser[@"gender"] = [self.genderPicker titleForSegmentAtIndex:self.genderPicker.selectedSegmentIndex];
+    curUser[@"lookingFor"] = [self.lookingForPicker titleForSegmentAtIndex:self.lookingForPicker.selectedSegmentIndex];
+    
+    [curUser saveInBackground];
+    
+    [self dismissViewControllerAnimated:YES completion:^{}];
+    
+    
 }
 
 @end
