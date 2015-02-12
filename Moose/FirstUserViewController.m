@@ -51,9 +51,50 @@
     
     [curUser saveInBackground];
     
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"gender" equalTo:@"Girl"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu users.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object.objectId);
+                [self getStatusesForUser:object];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
     [self dismissViewControllerAnimated:YES completion:^{}];
     
     
 }
+
+-(void) getStatusesForUser: (PFObject*) user
+{
+    PFQuery* q = [PFQuery queryWithClassName:@"status"];
+    [q whereKey:@"username" equalTo:user[@"username"]];
+    [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved %lu statuses.", (unsigned long)objects.count);
+            // Do something with the found objects
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object[@"text"]);
+                
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"returned_statuses"
+                 object:object];
+            }
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+}
+
 
 @end

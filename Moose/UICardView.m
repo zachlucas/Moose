@@ -44,6 +44,11 @@ BOOL imageViewTouched;
                                              selector:@selector(receiveTestNotification:)
                                                  name:@"first_status"
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveStatusObject:)
+                                                 name:@"returned_statuses"
+                                               object:nil];
 
 }
 
@@ -101,6 +106,16 @@ BOOL imageViewTouched;
     
     [self setBackgroundColor:[UIColor whiteColor]];
     self.alpha = 1;
+}
+
+-(void) receiveStatusObject:(NSNotification *) notification
+{
+    NSLog(@"RECEIVED STATUS: %@",[notification.object objectForKey:@"text"]);
+    
+    
+    [self.statusLabel setText:[notification.object objectForKey:@"text"]];
+    [self setBackgroundColor:[UIColor greenColor]];
+    [self setFrame:CGRectMake(0,0,300,300)];
 }
 
 - (void) receiveTestNotification:(NSNotification *) notification
