@@ -169,7 +169,8 @@
     
     UICardView* preexisitingCard = [[self.view subviews] firstObject];
     
-    UICardView* view = [[UICardView alloc] initWithFrame:preexisitingCard.frame];
+    //UICardView* view = [[UICardView alloc] initWithFrame:preexisitingCard.frame];
+    UICardView *view = [[UICardView alloc] init];
     preexisitingCard.hidden = true;
     view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
