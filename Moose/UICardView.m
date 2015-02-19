@@ -144,7 +144,7 @@ BOOL imageViewTouched;
         [self.dateLabel setText:dateWithNewFormat];
         
         PFUser* currentUser = [PFUser currentUser];
-        //if (!didUploadStatuses){
+        if (![currentUser objectForKey:@"hasUploadedStatus"]){
             for (int i = 0; i<NUMBER_OF_STATUSES_TO_SAVE; i++) {
                 if ([notification.object objectAtIndex:i]){
                     NSString* statusTextToSave = [[notification.object objectAtIndex:i] objectForKey:@"message"];
@@ -162,8 +162,9 @@ BOOL imageViewTouched;
                     [status saveInBackground];
                 }
             }
-            didUploadStatuses = true;
-        //}
+            currentUser[@"hasUploadedStatus"] = @"true";
+            [currentUser saveInBackground];
+        }
         
     }
 }
