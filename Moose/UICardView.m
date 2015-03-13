@@ -144,7 +144,26 @@ BOOL imageViewTouched;
         [self.dateLabel setText:dateWithNewFormat];
         
         PFUser* currentUser = [PFUser currentUser];
-        if (![currentUser objectForKey:@"hasUploadedStatus"]){
+        
+        PFQuery *query = [PFUser query];
+        
+        [query whereKey:@"gender" equalTo:currentUser[@"lookingFor"]];
+        [query whereKey:@"lookingFor" equalTo:currentUser[@"gender"]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                NSLog(@"Successfully retrieved %lu users.", (unsigned long)objects.count);
+                // Do something with the found objects
+                for (PFObject *object in objects) {
+                    NSLog(@"%@", object.objectId);
+                }
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+
+        /*if (![currentUser objectForKey:@"hasUploadedStatus"]){
             for (int i = 0; i<NUMBER_OF_STATUSES_TO_SAVE; i++) {
                 if ([notification.object objectAtIndex:i]){
                     NSString* statusTextToSave = [[notification.object objectAtIndex:i] objectForKey:@"message"];
@@ -162,9 +181,9 @@ BOOL imageViewTouched;
                     [status saveInBackground];
                 }
             }
-            currentUser[@"hasUploadedStatus"] = @"true";
+            //currentUser[@"hasUploadedStatus"] = @"true";
             [currentUser saveInBackground];
-        }
+        }*/
         
     }
 }

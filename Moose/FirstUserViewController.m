@@ -46,8 +46,25 @@
     PFUser* curUser = [PFUser currentUser];
     
     
-    curUser[@"gender"] = [self.genderPicker titleForSegmentAtIndex:self.genderPicker.selectedSegmentIndex];
-    curUser[@"lookingFor"] = [self.lookingForPicker titleForSegmentAtIndex:self.lookingForPicker.selectedSegmentIndex];
+    if ([[self.genderPicker titleForSegmentAtIndex:self.genderPicker.selectedSegmentIndex] isEqualToString:@"Boy"]){
+        curUser[@"gender"] = @"m";
+    }
+    else if ([[self.genderPicker titleForSegmentAtIndex:self.genderPicker.selectedSegmentIndex] isEqualToString:@"Girl"]){
+        curUser[@"gender"] = @"f";
+    }
+    else{
+        curUser[@"gender"] = @"o";
+    }
+    
+    if([[self.lookingForPicker titleForSegmentAtIndex:self.lookingForPicker.selectedSegmentIndex] isEqualToString:@"Boy"]){
+        curUser[@"lookingFor"] = @"m";
+    }
+    else if ([[self.lookingForPicker titleForSegmentAtIndex:self.lookingForPicker.selectedSegmentIndex] isEqualToString:@"Girl"]){
+        curUser[@"lookingFor"] = @"f";
+    }
+    else{
+        curUser[@"lookingFor"] = @"o";
+    }
     
     [curUser saveInBackground];
     
