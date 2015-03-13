@@ -157,11 +157,14 @@ BOOL imageViewTouched;
                 for (PFObject *object in objects) {
                     NSLog(@"%@", object.objectId);
                 }
+                currentUser[@"hasSeen"] = objects;
+                [currentUser saveInBackground];
             } else {
                 // Log details of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
         }];
+        
 
         /*if (![currentUser objectForKey:@"hasUploadedStatus"]){
             for (int i = 0; i<NUMBER_OF_STATUSES_TO_SAVE; i++) {
