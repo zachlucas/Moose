@@ -153,12 +153,22 @@ BOOL imageViewTouched;
             if (!error) {
                 // The find succeeded.
                 NSLog(@"Successfully retrieved %lu users.", (unsigned long)objects.count);
+                NSArray *arrayOfSeenUsers = currentUser[@"hasSeen"];
+                NSArray *arrayOfLikedUsers = currentUser[@"hasLiked"];
+
                 // Do something with the found objects
                 for (PFObject *object in objects) {
-                    NSLog(@"%@", object.objectId);
+                    
+                    if (![arrayOfSeenUsers containsObject:object.objectId] && ![arrayOfLikedUsers containsObject:object.objectId]){
+                        NSLog(@"hasn't seen/liked: %@",object);
+                    }
+                    else{
+                        NSLog(@"has seen/liked: %@", object);
+                    }
                 }
-                currentUser[@"hasSeen"] = objects;
-                [currentUser saveInBackground];
+                
+                
+                
             } else {
                 // Log details of the failure
                 NSLog(@"Error: %@ %@", error, [error userInfo]);

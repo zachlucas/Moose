@@ -45,21 +45,23 @@
 
 - (void)_loadData {
     // ...
-    FBRequest *request = [FBRequest requestForGraphPath:@"/me/statuses"];
-    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        // handle response
-        NSLog(@"FB Reuqest made");
-        NSLog(@"result: %@",result);
-        if (result) {
-            NSMutableArray *data = [result objectForKey:@"data"];
-            
-            [[NSNotificationCenter defaultCenter]
-             postNotificationName:@"first_status"
-             object:data];
+    if (FBSession.activeSession.isOpen){
+        FBRequest *request = [FBRequest requestForGraphPath:@"/me/statuses"];
+        [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            // handle response
+            NSLog(@"FB Reuqest made");
+            NSLog(@"result: %@",result);
+            if (result) {
+                NSMutableArray *data = [result objectForKey:@"data"];
+                
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"first_status"
+                 object:data];
 
-        }
+            }
 
-    }];
+        }];
+    }
 }
 
 - (IBAction)facebookLoginButton:(id)sender {
