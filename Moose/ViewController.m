@@ -50,9 +50,35 @@
         [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
             // handle response
             NSLog(@"FB Reuqest made");
-            NSLog(@"result: %@",result);
+            //NSLog(@"result: %@",result);
             if (result) {
                 NSMutableArray *data = [result objectForKey:@"data"];
+                PFUser* curUser = [PFUser currentUser];
+                PFQuery* q = [PFQuery queryWithClassName:@"statusGroup"];
+                [q whereKey:@"username" equalTo:curUser[@"username"]];
+                [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    if (!error) {
+                        // The find succeeded.
+                        if (objects.count == 0) {
+                          
+                            NSMutableDictionary *statusDictionary = [NSMutableDictionary dictionary];
+                            PFObject *newStatusGroup = [PFObject objectWithClassName:@"statusGroup"];
+                            
+                            for (NSDictionary *o in data) {
+                                NSLog(@"message will be uploaded:::: %@", [o objectForKey:@"message"]);
+                                if ([o objectForKey:@"message"]){
+                                    newStatusGroup[@"username"] = [PFUser currentUser].username;
+                                    [statusDictionary setObject:[o objectForKey:@"updated_time"] forKey:[o objectForKey:@"message"]];
+                                }
+                            }
+                            newStatusGroup[@"statuses"] = statusDictionary;
+                            [newStatusGroup saveInBackground];
+                        }
+                    } else {
+                        // Log details of the failure
+                        NSLog(@"Error: %@ %@", error, [error userInfo]);
+                    }
+                }];
                 
                 [[NSNotificationCenter defaultCenter]
                  postNotificationName:@"first_status"
